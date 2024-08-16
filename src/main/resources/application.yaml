@@ -1,0 +1,3 @@
+telegram:
+  username: "manicure-scheduler-bot"
+  bot-token: ${MANICURE_SCHEDULER_TELEGRAM_BOT_TOKEN}
