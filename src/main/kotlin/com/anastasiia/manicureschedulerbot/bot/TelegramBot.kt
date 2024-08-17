@@ -19,6 +19,6 @@ class TelegramBot(
     }
 
     override fun onUpdateReceived(update: Update) {
-        updateDispatcher.dispatch(update, this)
+        updateDispatcher.dispatch(update)
     }
 }

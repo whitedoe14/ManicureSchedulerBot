@@ -28,6 +28,8 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation("org.telegram:telegrambots:6.9.7.1")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.postgresql:postgresql:42.7.3")
+    implementation("javax.xml.bind:jaxb-api:2.3.1")
 }
 
 kotlin {

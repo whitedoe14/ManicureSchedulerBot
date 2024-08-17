@@ -18,18 +18,11 @@ class EventEntity {
     @GeneratedValue(strategy = IDENTITY)
     val id: Long? = null
 
-    @Column(name = "from")
-    var from: LocalDateTime? = null
+    @Column(name = "time_from")
+    var timeFrom: LocalDateTime? = null
 
-    @Column(name = "to")
-    var to: LocalDateTime? = null
-
-    @ManyToOne
-    @JoinColumn(
-        name = "client",
-        referencedColumnName = "telegramId",
-    )
-    var client: ClientEntity
+    @Column(name = "time_to")
+    var timeTo: LocalDateTime? = null
 
     @ManyToOne
     @JoinColumn(
@@ -37,6 +30,14 @@ class EventEntity {
         referencedColumnName = "id"
     )
     var manicurist: ManicuristEntity
+
+    @ManyToOne(optional = false)
+    @JoinColumn(
+        name = "client",
+        referencedColumnName = "telegram_id",
+        nullable = false
+    )
+    var client: ClientEntity
 
     constructor(client: ClientEntity, manicurist: ManicuristEntity) {
         this.client = client

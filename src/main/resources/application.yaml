@@ -1,3 +1,11 @@
 telegram:
   username: "manicure-scheduler-bot"
   bot-token: ${MANICURE_SCHEDULER_TELEGRAM_BOT_TOKEN}
+
+spring:
+  datasource:
+    url: ${MANICURE_SCHEDULER_CONNECTION_STRING}
+
+  jpa:
+    hibernate:
+      ddl-auto: update

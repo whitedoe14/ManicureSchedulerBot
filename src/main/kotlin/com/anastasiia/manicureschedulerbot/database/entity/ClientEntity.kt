@@ -28,8 +28,12 @@ class ClientEntity {
     @Column(name = "manicure_type", nullable = false)
     var manicureType: String
 
-    @OneToMany(mappedBy = "client", cascade = [CascadeType.ALL])
-    var events: List<EventEntity>? = emptyList()
+    @OneToMany(
+        mappedBy = "client",
+        cascade = [CascadeType.ALL],
+        orphanRemoval = true
+    )
+    var events: MutableList<EventEntity>? = null
 
     constructor(
         telegramId: Long,
