@@ -13,7 +13,6 @@ import jakarta.persistence.Table
 @Entity
 @Table(name = "manicurists")
 class ManicuristEntity {
-
     @Id
     @GeneratedValue(strategy = IDENTITY)
     val id: Long? = null
@@ -33,5 +32,4 @@ class ManicuristEntity {
     constructor(fullName: String) {
         this.fullName = fullName
     }
-
 }

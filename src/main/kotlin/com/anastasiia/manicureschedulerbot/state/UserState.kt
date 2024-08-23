@@ -1,3 +1,3 @@
 package com.anastasiia.manicureschedulerbot.state
 
-interface TelegramUserState
+interface UserState

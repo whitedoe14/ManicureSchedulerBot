@@ -11,8 +11,8 @@ import jakarta.persistence.Id
 import jakarta.persistence.Table
 
 @Entity
-@Table(name = "service_catalog")
-class ServiceCatalogEntity {
+@Table(name = "manicures")
+class ManicureEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     val id: Long? = null

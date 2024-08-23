@@ -10,10 +10,9 @@ import kotlin.jvm.Throws
 
 @Configuration
 class BotConfig {
-
     @Bean
     @Throws(TelegramApiException::class)
-    fun registerBot(bot: TelegramLongPollingBot) : TelegramBotsApi {
+    fun registerBot(bot: TelegramLongPollingBot): TelegramBotsApi {
         val telegramBotsApi = TelegramBotsApi(DefaultBotSession::class.java)
         telegramBotsApi.registerBot(bot)
         return telegramBotsApi

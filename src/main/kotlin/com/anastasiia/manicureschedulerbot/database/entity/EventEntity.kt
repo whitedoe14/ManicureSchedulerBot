@@ -10,7 +10,6 @@ import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 import java.time.LocalDateTime
 
-
 @Entity
 @Table(name = "events")
 class EventEntity {
@@ -27,7 +26,7 @@ class EventEntity {
     @ManyToOne
     @JoinColumn(
         name = "manicurist",
-        referencedColumnName = "id"
+        referencedColumnName = "id",
     )
     var manicurist: ManicuristEntity
 
@@ -35,7 +34,7 @@ class EventEntity {
     @JoinColumn(
         name = "client",
         referencedColumnName = "telegram_id",
-        nullable = false
+        nullable = false,
     )
     var client: ClientEntity
 

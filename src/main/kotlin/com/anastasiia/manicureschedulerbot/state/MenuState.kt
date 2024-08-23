@@ -1,5 +1,5 @@
 package com.anastasiia.manicureschedulerbot.state
 
-enum class TelegramMenuState : TelegramUserState {
+enum class MenuState : UserState {
     ON_MAIN_MENU,
 }

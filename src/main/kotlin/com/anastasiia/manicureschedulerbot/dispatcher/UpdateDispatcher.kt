@@ -3,13 +3,11 @@ package com.anastasiia.manicureschedulerbot.dispatcher
 import com.anastasiia.manicureschedulerbot.handler.update.UpdateHandler
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Service
-
 import org.telegram.telegrambots.meta.api.objects.Update
-
 
 @Service
 class UpdateDispatcher(
-    private val updateHandlers: List<UpdateHandler>
+    private val updateHandlers: List<UpdateHandler>,
 ) {
     private val logger = LoggerFactory.getLogger(this::class.java)
 

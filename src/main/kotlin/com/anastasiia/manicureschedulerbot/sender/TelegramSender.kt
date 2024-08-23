@@ -10,9 +10,9 @@ import org.telegram.telegrambots.bots.DefaultBotOptions
 class TelegramSender(
     @Value("\${telegram.bot-token}") botToken: String,
 ) : DefaultAbsSender(
-    DefaultBotOptions(),
-    botToken
-) {
+        DefaultBotOptions(),
+        botToken,
+    ) {
     private val logger = LoggerFactory.getLogger(this::class.java)
 
 //    fun <Method: BotApiMethod<*>> executeMethod(method: Method) {

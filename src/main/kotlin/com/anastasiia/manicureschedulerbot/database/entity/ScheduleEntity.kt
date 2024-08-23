@@ -16,12 +16,11 @@ import jakarta.persistence.ManyToMany
 import jakarta.persistence.Table
 import java.time.DayOfWeek
 import java.time.LocalTime
-import java.util.*
+import java.util.EnumSet
 
 @Entity
 @Table(name = "schedules")
 class ScheduleEntity {
-
     @Id
     @GeneratedValue(strategy = IDENTITY)
     val id: Long? = null
@@ -46,15 +45,15 @@ class ScheduleEntity {
     @JoinTable(
         name = "schedule_manicurist",
         joinColumns = [JoinColumn(name = "schedule_id", referencedColumnName = "id")],
-        inverseJoinColumns = [JoinColumn(name = "manicurist_id", referencedColumnName = "id")]
+        inverseJoinColumns = [JoinColumn(name = "manicurist_id", referencedColumnName = "id")],
     )
     var manicurists: List<ManicuristEntity>? = emptyList()
 
-
-    constructor(restDaysOfWeek: Set<DayOfWeek>,
-                scheduleTypeVo: ScheduleTypeVo,
-                startWorkingTime: LocalTime,
-                endWorkingTime: LocalTime
+    constructor(
+        restDaysOfWeek: Set<DayOfWeek>,
+        scheduleTypeVo: ScheduleTypeVo,
+        startWorkingTime: LocalTime,
+        endWorkingTime: LocalTime,
     ) {
         this.restDaysOfWeek = restDaysOfWeek
         this.scheduleTypeVo = scheduleTypeVo

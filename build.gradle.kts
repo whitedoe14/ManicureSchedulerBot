@@ -5,6 +5,7 @@ plugins {
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
 }
 
 group = "com.anastasiia"
@@ -30,6 +31,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.postgresql:postgresql:42.7.3")
     implementation("javax.xml.bind:jaxb-api:2.3.1")
+    implementation("org.flywaydb:flyway-core:10.17.1")
+    runtimeOnly("org.flywaydb:flyway-database-postgresql:10.17.1")
 }
 
 kotlin {

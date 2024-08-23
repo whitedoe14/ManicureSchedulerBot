@@ -31,7 +31,7 @@ class ClientEntity {
     @OneToMany(
         mappedBy = "client",
         cascade = [CascadeType.ALL],
-        orphanRemoval = true
+        orphanRemoval = true,
     )
     var events: MutableList<EventEntity>? = null
 
@@ -39,7 +39,7 @@ class ClientEntity {
         telegramId: Long,
         fullName: String,
         phoneNumber: String,
-        manicureType: String
+        manicureType: String,
     ) {
         this.telegramId = telegramId
         this.fullName = fullName
