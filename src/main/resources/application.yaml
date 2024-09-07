@@ -1,6 +1,7 @@
 telegram:
   username: "manicure-scheduler-bot"
   bot-token: ${MANICURE_SCHEDULER_TELEGRAM_BOT_TOKEN}
+  time-picker-url: ${MANICURE_SCHEDULER_TIME_PICKER_URL}
 
 spring:
   datasource:
@@ -15,3 +16,4 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: true
+    open-in-view: false

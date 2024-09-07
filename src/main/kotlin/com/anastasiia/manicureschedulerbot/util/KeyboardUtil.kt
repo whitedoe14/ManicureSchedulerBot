@@ -13,12 +13,15 @@ import com.anastasiia.manicureschedulerbot.database.entity.ManicureEntity
 import com.anastasiia.manicureschedulerbot.database.entity.ManicuristEntity
 import com.anastasiia.manicureschedulerbot.service.ManicureService
 import com.anastasiia.manicureschedulerbot.service.ManicuristService
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
+import org.telegram.telegrambots.meta.api.objects.inlinequery.result.InlineQueryResultsButton
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow
+import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo
 
 @Component
 class KeyboardUtil(
@@ -26,6 +29,7 @@ class KeyboardUtil(
     private val manicuristPageCache: ManicuristPageCache,
     private val manicureService: ManicureService,
     private val manicuristService: ManicuristService,
+    @Value("\${telegram.time-picker-url}") private val timePickerUrl: String,
 ) {
     fun createManicureKeyboard(
         userId: Long,
@@ -133,6 +137,17 @@ class KeyboardUtil(
             }
             i++
         }
+    }
+
+    fun createTimePickerKeyboard(): InlineKeyboardMarkup {
+        val keyboardBuilder = InlineKeyboardMarkup.builder()
+        val webAppInfo = WebAppInfo(timePickerUrl)
+        val miniAppButton = InlineKeyboardButton.builder()
+            .text("Choose time")
+            .webApp(webAppInfo)
+            .build()
+        keyboardBuilder.keyboardRow(arrayListOf(miniAppButton))
+        return keyboardBuilder.build()
     }
 
     // todo: remove

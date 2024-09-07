@@ -33,6 +33,10 @@ dependencies {
     implementation("javax.xml.bind:jaxb-api:2.3.1")
     implementation("org.flywaydb:flyway-core:10.17.1")
     runtimeOnly("org.flywaydb:flyway-database-postgresql:10.17.1")
+    implementation("org.springframework.boot:spring-boot-starter-web:3.3.3")
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.mapstruct:mapstruct:1.6.0")
+    implementation("org.mapstruct:mapstruct-processor:1.6.0")
 }
 
 kotlin {

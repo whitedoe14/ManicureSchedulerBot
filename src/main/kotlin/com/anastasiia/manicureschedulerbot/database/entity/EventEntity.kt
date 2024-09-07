@@ -42,4 +42,5 @@ class EventEntity {
         this.client = client
         this.manicurist = manicurist
     }
+
 }

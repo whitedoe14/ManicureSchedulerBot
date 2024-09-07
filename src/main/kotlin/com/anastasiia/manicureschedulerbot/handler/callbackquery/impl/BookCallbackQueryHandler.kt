@@ -181,6 +181,16 @@ class BookCallbackQueryHandler(
         val userId = req.userId
         bookManicureFormCache.updateManicuristId(userId, manicuristId)
         userStateService.setUserState(userId, CHOOSE_TIME)
-        // todo: send mini app with frontend and handle choose_time in another handler
+        sendChooseTimeMessage(req)
+    }
+
+    fun sendChooseTimeMessage(req: UserCallbackQueryRequest) {
+        val editMessageReq = EditMessageText.builder()
+            .chatId(req.userId)
+            .messageId(req.callbackQuery.message.messageId)
+            .text("Choose time")
+            .replyMarkup(keyboardUtil.createTimePickerKeyboard())
+            .build()
+        telegramSender.execute(editMessageReq)
     }
 }
