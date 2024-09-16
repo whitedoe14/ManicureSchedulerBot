@@ -15,7 +15,6 @@ import com.anastasiia.manicureschedulerbot.service.ManicureService
 import com.anastasiia.manicureschedulerbot.service.ManicuristService
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
-import org.telegram.telegrambots.meta.api.objects.inlinequery.result.InlineQueryResultsButton
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton
@@ -141,7 +140,7 @@ class KeyboardUtil(
 
     fun createTimePickerKeyboard(): InlineKeyboardMarkup {
         val keyboardBuilder = InlineKeyboardMarkup.builder()
-        val webAppInfo = WebAppInfo(timePickerUrl)
+        val webAppInfo = WebAppInfo("$timePickerUrl/book")
         val miniAppButton = InlineKeyboardButton.builder()
             .text("Choose time")
             .webApp(webAppInfo)

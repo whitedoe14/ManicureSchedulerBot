@@ -185,12 +185,13 @@ class BookCallbackQueryHandler(
     }
 
     fun sendChooseTimeMessage(req: UserCallbackQueryRequest) {
-        val editMessageReq = EditMessageText.builder()
-            .chatId(req.userId)
-            .messageId(req.callbackQuery.message.messageId)
-            .text("Choose time")
-            .replyMarkup(keyboardUtil.createTimePickerKeyboard())
-            .build()
+        val editMessageReq =
+            EditMessageText.builder()
+                .chatId(req.userId)
+                .messageId(req.callbackQuery.message.messageId)
+                .text("Choose time")
+                .replyMarkup(keyboardUtil.createTimePickerKeyboard())
+                .build()
         telegramSender.execute(editMessageReq)
     }
 }

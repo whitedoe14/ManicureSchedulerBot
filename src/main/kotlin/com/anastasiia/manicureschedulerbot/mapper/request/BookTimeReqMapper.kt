@@ -6,5 +6,4 @@ import com.anastasiia.manicureschedulerbot.mapper.BaseMapper
 import org.mapstruct.Mapper
 
 @Mapper(componentModel = "spring")
-interface BookTimeReqMapper : BaseMapper<EventEntity, BookTimeDto> {
-}
+interface BookTimeReqMapper : BaseMapper<EventEntity, BookTimeDto>

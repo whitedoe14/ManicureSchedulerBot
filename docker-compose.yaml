@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+
+  manicure-scheduler-database:
+    image: postgres:16.2
+    container_name: manicure-scheduler-database
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=manicure_scheduler_bot
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - TZ=UTC
+      - PGTZ=UTC

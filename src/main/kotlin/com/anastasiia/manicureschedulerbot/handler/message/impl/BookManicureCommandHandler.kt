@@ -24,7 +24,7 @@ class BookManicureCommandHandler(
     override fun isApplicable(request: UserMessageRequest): Boolean {
         val message = request.message
         return message.hasText() &&
-            message.isCommand() &&
+            message.isCommand &&
             message.text.startsWith(command) // todo: add states
     }
 
