@@ -22,6 +22,7 @@ class TimePickerViewController(
     @GetMapping("/book")
     fun getBookingPage(model: Model): String {
         model.addAttribute("callbackUrl", callbackUrl)
-        return "book-page"
+        return "simple-calendar"
+//        return "index" // TODO: change it
     }
 }

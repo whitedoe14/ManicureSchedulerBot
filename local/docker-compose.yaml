@@ -1,7 +1,4 @@
-version: "2"
-
 services:
-
   manicure-scheduler-database:
     image: postgres:16.2
     container_name: manicure-scheduler-database

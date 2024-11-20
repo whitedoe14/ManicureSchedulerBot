@@ -1,0 +1,16 @@
+{
+  "name": "manicureschedulerbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "telegram-webapps": "^7.10.0",
+    "typescript": "^5.6.2"
+  }
+}
