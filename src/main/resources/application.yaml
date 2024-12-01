@@ -17,3 +17,6 @@ spring:
       ddl-auto: validate
     show-sql: true
     open-in-view: false
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE

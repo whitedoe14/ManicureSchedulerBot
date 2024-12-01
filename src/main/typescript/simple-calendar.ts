@@ -32,8 +32,13 @@ function generatePreviousMonthDays(year: number, month: number): string {
     return calendar;
 }
 
+function fetchAvailableDays() {
+
+}
+
 function generateCurrentMonthDays(year: number, month: number): string {
     const lastDate: number = getLastDateOfMonth(year, month);
+    const availableDays = fetchAvailableDays();
     let calendar: string = "";
 
     for (let i: number = 1; i <= lastDate; i++) {
