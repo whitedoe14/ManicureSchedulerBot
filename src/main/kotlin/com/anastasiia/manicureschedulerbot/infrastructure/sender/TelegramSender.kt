@@ -13,13 +13,4 @@ class TelegramSender(
     DefaultBotOptions(),
     botToken,
 ) {
-    private val logger = LoggerFactory.getLogger(this::class.java)
-
-//    fun <Method: BotApiMethod<*>> executeMethod(method: Method) {
-//        try {
-//            super.execute()
-//        }catch (e: TelegramApiException) {
-//            logger.warn(e.message)
-//        }
-//    }
 }

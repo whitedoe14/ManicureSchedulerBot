@@ -1,6 +1,6 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.database.entity
 
-import com.anastasiia.manicureschedulerbot.infrastructure.database.vo.CurrencyVo
+import com.anastasiia.manicureschedulerbot.domain.manicure.valueobject.Currency
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
@@ -25,12 +25,12 @@ class ManicureEntity {
 
     @Column(name = "currency", nullable = false)
     @Enumerated(EnumType.STRING)
-    var currency: CurrencyVo
+    var currency: Currency
 
     @Column(name = "duration_in_min", nullable = false)
     var durationInMin: Int
 
-    constructor(name: String, price: Int, durationInMin: Int, currency: CurrencyVo) {
+    constructor(name: String, price: Int, durationInMin: Int, currency: Currency) {
         this.name = name
         this.price = price
         this.durationInMin = durationInMin
