@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service
 
 @Service
 class ScheduleService {
-    fun getAvailableDays(): {
-
-    }
+//    fun getAvailableDays(): {
+//
+//    }
 }

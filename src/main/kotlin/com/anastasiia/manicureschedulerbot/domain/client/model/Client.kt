@@ -14,4 +14,4 @@ data class Client(
     val phoneNumber: PhoneNumber,
     val manicureType: ManicureType,
     val events: List<Event>,
-    )
+)

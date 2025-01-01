@@ -1,16 +1,6 @@
 package com.anastasiia.manicureschedulerbot.application.handler.callbackquery.impl
 
-import com.anastasiia.manicureschedulerbot.infrastructure.cache.form.BookManicureFormCache
-import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicurePageCache
-import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicuristPageCache
-import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.BOOK_MANICURE_PREFIX
-import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.NEXT_MANICURE_PAGE_CALLBACK
-import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.NEXT_MANICURIST_PAGE_CALLBACK
-import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURE_PAGE_CALLBACK
-import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURIST_PAGE_CALLBACK
 import com.anastasiia.manicureschedulerbot.application.handler.callbackquery.CallbackQueryHandler
-import com.anastasiia.manicureschedulerbot.infrastructure.cache.model.UserCallbackQueryRequest
-import com.anastasiia.manicureschedulerbot.infrastructure.sender.TelegramSender
 import com.anastasiia.manicureschedulerbot.application.service.ManicureService
 import com.anastasiia.manicureschedulerbot.application.service.ManicuristService
 import com.anastasiia.manicureschedulerbot.application.service.UserStateService
@@ -18,6 +8,16 @@ import com.anastasiia.manicureschedulerbot.application.state.BookManicureState.C
 import com.anastasiia.manicureschedulerbot.application.state.BookManicureState.CHOOSE_MANICURIST
 import com.anastasiia.manicureschedulerbot.application.state.BookManicureState.CHOOSE_TIME
 import com.anastasiia.manicureschedulerbot.infrastructure.bot.util.KeyboardUtil
+import com.anastasiia.manicureschedulerbot.infrastructure.cache.form.BookManicureFormCache
+import com.anastasiia.manicureschedulerbot.infrastructure.cache.model.UserCallbackQueryRequest
+import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicurePageCache
+import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicuristPageCache
+import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.BOOK_MANICURE_PREFIX
+import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.NEXT_MANICURE_PAGE_CALLBACK
+import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.NEXT_MANICURIST_PAGE_CALLBACK
+import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURE_PAGE_CALLBACK
+import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURIST_PAGE_CALLBACK
+import com.anastasiia.manicureschedulerbot.infrastructure.sender.TelegramSender
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageReplyMarkup
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText

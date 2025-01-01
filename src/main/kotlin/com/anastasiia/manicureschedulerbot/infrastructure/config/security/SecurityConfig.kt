@@ -1,6 +1,6 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.config.security
 
-import com.anastasiia.manicureschedulerbot.infrastructure.config.security.filter.MiniAppTokenFilter
+import com.anastasiia.manicureschedulerbot.infrastructure.config.security.filter.WebAppInitDataFilter
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -31,7 +31,7 @@ class SecurityConfig {
                     .requestMatchers("/submit-book").authenticated()
                     .anyRequest().authenticated()
             }
-            .addFilterBefore(MiniAppTokenFilter(botToken), AuthorizationFilter::class.java)
+            .addFilterBefore(WebAppInitDataFilter(botToken), AuthorizationFilter::class.java)
         return http.build()
     }
 }

@@ -2,7 +2,7 @@ package com.anastasiia.manicureschedulerbot.domain.manicure.valueobject
 
 import com.anastasiia.manicureschedulerbot.domain.common.ValueObject
 
-enum class ManicureName (private val manicureName: String) : ValueObject {
+enum class ManicureName(private val manicureName: String) : ValueObject {
     FRENCH("french"),
     PRESS_ON("press-on"),
     CLASSIC("classic"),

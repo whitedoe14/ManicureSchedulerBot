@@ -1,6 +1,5 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.sender
 
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.bots.DefaultAbsSender
@@ -12,5 +11,4 @@ class TelegramSender(
 ) : DefaultAbsSender(
     DefaultBotOptions(),
     botToken,
-) {
-}
+)

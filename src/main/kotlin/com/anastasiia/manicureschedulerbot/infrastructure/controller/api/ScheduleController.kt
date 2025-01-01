@@ -11,7 +11,5 @@ class ScheduleController {
 
     @GetMapping
     fun getAvailableDays(): ResponseEntity<String> {
-
     }
-
 }

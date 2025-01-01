@@ -1,18 +1,16 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.config.security.filter
 
-import com.anastasiia.manicureschedulerbot.infrastructure.config.security.InitDataVerifier
+import com.anastasiia.manicureschedulerbot.infrastructure.config.security.WebAppInitDataVerificationResult.SuccessWebAppInitDataVerificationResult
+import com.anastasiia.manicureschedulerbot.infrastructure.config.security.WebAppInitDataVerifier
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.slf4j.LoggerFactory
-import org.springframework.http.HttpHeaders.AUTHORIZATION
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.OncePerRequestFilter
 
-private const val BEARER = "Bearer"
-
-class MiniAppTokenFilter(
+class WebAppInitDataFilter(
     private val botToken: String,
 ) : OncePerRequestFilter() {
 
@@ -23,25 +21,16 @@ class MiniAppTokenFilter(
         response: HttpServletResponse,
         filterChain: FilterChain,
     ) {
-        if (!isValidAuthHeader(request)) {
+        val webAppInitData = when (val result = WebAppInitDataVerifier.verify(request, botToken)) {
+            is SuccessWebAppInitDataVerificationResult -> result.webAppInitData
+            else -> null
+        }
+        if (webAppInitData == null) {
             filterChain.doFilter(request, response)
             return
         }
-
-        val rawInitData = getInitDataFromHeader(request)
-        if (!InitDataVerifier.isValid(rawInitData, botToken)) {
-            filterChain.doFilter(request, response)
-            return
-        }
-
-        val initData = InitDataVerifier.parseInitData(rawInitData)
-        addUserToSecurityContext(initData["query_id"]!!)
+        addUserToSecurityContext(webAppInitData["query_id"]!!)
         filterChain.doFilter(request, response)
-    }
-
-    private fun isValidAuthHeader(request: HttpServletRequest): Boolean {
-        val authHeaderValue = request.getHeader(AUTHORIZATION)
-        return authHeaderValue != null && authHeaderValue.startsWith(BEARER)
     }
 
     private fun addUserToSecurityContext(userId: String) {
@@ -49,10 +38,5 @@ class MiniAppTokenFilter(
             authentication = UsernamePasswordAuthenticationToken(userId, null, emptyList())
         }
         filterLogger.debug("User:$userId was added to security context")
-    }
-
-    private fun getInitDataFromHeader(request: HttpServletRequest): String {
-        val authHeader = request.getHeader(AUTHORIZATION)
-        return authHeader.removePrefix("$BEARER ")
     }
 }

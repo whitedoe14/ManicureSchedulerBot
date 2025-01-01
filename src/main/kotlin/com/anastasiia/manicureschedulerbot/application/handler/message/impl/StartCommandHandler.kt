@@ -1,9 +1,9 @@
 package com.anastasiia.manicureschedulerbot.application.handler.message.impl
 
 import com.anastasiia.manicureschedulerbot.application.handler.message.MessageHandler
+import com.anastasiia.manicureschedulerbot.infrastructure.bot.util.KeyboardUtil
 import com.anastasiia.manicureschedulerbot.infrastructure.cache.model.UserMessageRequest
 import com.anastasiia.manicureschedulerbot.infrastructure.sender.TelegramSender
-import com.anastasiia.manicureschedulerbot.infrastructure.bot.util.KeyboardUtil
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage

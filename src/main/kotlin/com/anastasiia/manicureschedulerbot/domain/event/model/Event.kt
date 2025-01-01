@@ -5,9 +5,9 @@ import com.anastasiia.manicureschedulerbot.domain.event.valueobject.EventId
 import com.anastasiia.manicureschedulerbot.domain.event.valueobject.TimeFrom
 import com.anastasiia.manicureschedulerbot.domain.event.valueobject.TimeTo
 
-data class Event (
+data class Event(
     val eventId: EventId?,
     val timeFrom: TimeFrom?,
     val timeTo: TimeTo?,
     val client: Client,
-    )
+)
