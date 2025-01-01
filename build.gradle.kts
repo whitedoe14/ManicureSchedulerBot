@@ -7,7 +7,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.6"
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
-    kotlin("plugin.jpa") version kotlinVersion
+    id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("com.github.node-gradle.node") version "7.0.2"
 }

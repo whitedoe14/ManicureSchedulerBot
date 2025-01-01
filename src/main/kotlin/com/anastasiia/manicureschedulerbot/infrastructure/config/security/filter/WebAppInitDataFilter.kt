@@ -1,7 +1,7 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.config.security.filter
 
-import com.anastasiia.manicureschedulerbot.infrastructure.config.security.WebAppInitDataVerificationResult.SuccessWebAppInitDataVerificationResult
-import com.anastasiia.manicureschedulerbot.infrastructure.config.security.WebAppInitDataVerifier
+import com.anastasiia.manicureschedulerbot.infrastructure.config.security.util.WebAppInitDataVerificationResult.SuccessWebAppInitDataVerificationResult
+import com.anastasiia.manicureschedulerbot.infrastructure.config.security.util.WebAppInitDataVerifier
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -13,7 +13,6 @@ import org.springframework.web.filter.OncePerRequestFilter
 class WebAppInitDataFilter(
     private val botToken: String,
 ) : OncePerRequestFilter() {
-
     private val filterLogger = LoggerFactory.getLogger(this::class.java)
 
     override fun doFilterInternal(

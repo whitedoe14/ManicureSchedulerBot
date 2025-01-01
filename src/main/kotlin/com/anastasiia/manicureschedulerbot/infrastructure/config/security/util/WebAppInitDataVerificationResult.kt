@@ -1,4 +1,4 @@
-package com.anastasiia.manicureschedulerbot.infrastructure.config.security
+package com.anastasiia.manicureschedulerbot.infrastructure.config.security.util
 
 sealed class WebAppInitDataVerificationResult {
     data class SuccessWebAppInitDataVerificationResult(val webAppInitData: Map<String, String>) : WebAppInitDataVerificationResult()

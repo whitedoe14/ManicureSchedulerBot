@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/schedule")
 @RestController
 class ScheduleController {
-
     @GetMapping
     fun getAvailableDays(): ResponseEntity<String> {
+        TODO()
     }
 }

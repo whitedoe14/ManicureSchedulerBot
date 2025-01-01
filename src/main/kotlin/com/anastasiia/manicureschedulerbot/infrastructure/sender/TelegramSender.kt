@@ -9,6 +9,6 @@ import org.telegram.telegrambots.bots.DefaultBotOptions
 class TelegramSender(
     @Value("\${telegram.bot-token}") botToken: String,
 ) : DefaultAbsSender(
-    DefaultBotOptions(),
-    botToken,
-)
+        DefaultBotOptions(),
+        botToken,
+    )

@@ -1,3 +1,3 @@
-package com.anastasiia.manicureschedulerbot.domain.exception
+package com.anastasiia.manicureschedulerbot.application.handler.update.exception
 
 class NoSuchHandlerException(message: String? = null) : RuntimeException(message)

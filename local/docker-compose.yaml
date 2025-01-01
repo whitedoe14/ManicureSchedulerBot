@@ -6,8 +6,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=manicure_scheduler_bot
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - TZ=UTC
-      - PGTZ=UTC
+      POSTGRES_DB: manicure_scheduler_bot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: UTC
+      PGTZ: UTC

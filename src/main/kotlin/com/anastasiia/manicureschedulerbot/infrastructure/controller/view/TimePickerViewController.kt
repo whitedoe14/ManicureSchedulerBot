@@ -16,7 +16,6 @@ class TimePickerViewController(
     private val manicuristRepository: ManicuristRepository,
     @Value("\${telegram.time-picker-url}") private val callbackUrl: String,
 ) {
-
     val logger = LoggerFactory.getLogger(this::class.java)
 
     @GetMapping("/book")

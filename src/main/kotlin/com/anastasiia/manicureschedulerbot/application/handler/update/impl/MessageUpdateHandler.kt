@@ -2,8 +2,8 @@ package com.anastasiia.manicureschedulerbot.application.handler.update.impl
 
 import com.anastasiia.manicureschedulerbot.application.handler.message.MessageHandler
 import com.anastasiia.manicureschedulerbot.application.handler.update.UpdateHandler
+import com.anastasiia.manicureschedulerbot.application.handler.update.exception.NoSuchHandlerException
 import com.anastasiia.manicureschedulerbot.application.service.UserRequestService
-import com.anastasiia.manicureschedulerbot.domain.exception.NoSuchHandlerException
 import com.anastasiia.manicureschedulerbot.infrastructure.cache.model.UserMessageRequest
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.objects.Update

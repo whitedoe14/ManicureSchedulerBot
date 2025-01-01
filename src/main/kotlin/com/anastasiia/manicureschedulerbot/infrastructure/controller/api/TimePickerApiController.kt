@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class TimePickerApiController {
-
     val logger = LoggerFactory.getLogger(this::class.java)
 
     @PostMapping("/submit-book")
-    fun handleSubmit(@RequestBody bookTimeDto: BookTimeDto): ResponseEntity<HttpStatus> {
+    fun handleSubmit(
+        @RequestBody bookTimeDto: BookTimeDto,
+    ): ResponseEntity<HttpStatus> {
         logger.info("received book dto: $bookTimeDto")
 
         return ResponseEntity.ok().build()

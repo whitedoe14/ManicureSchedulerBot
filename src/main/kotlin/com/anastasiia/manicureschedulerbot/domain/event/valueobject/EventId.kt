@@ -1,6 +1,6 @@
 package com.anastasiia.manicureschedulerbot.domain.event.valueobject
 
-import com.anastasiia.manicureschedulerbot.domain.common.ValueObject
+import com.anastasiia.manicureschedulerbot.domain.shared.ValueObject
 import java.util.UUID
 
 @JvmInline
