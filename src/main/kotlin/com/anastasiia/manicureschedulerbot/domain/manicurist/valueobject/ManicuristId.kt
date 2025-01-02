@@ -4,7 +4,7 @@ import com.anastasiia.manicureschedulerbot.domain.shared.ValueObject
 import java.util.UUID
 
 @JvmInline
-value class ManicuristId(private val id: UUID) : ValueObject {
+value class ManicuristId(val value: UUID) : ValueObject {
     companion object {
         fun generate(): UUID {
             return UUID.randomUUID()

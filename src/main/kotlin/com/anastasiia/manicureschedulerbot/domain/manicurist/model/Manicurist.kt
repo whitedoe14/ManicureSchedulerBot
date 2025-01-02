@@ -2,6 +2,7 @@ package com.anastasiia.manicureschedulerbot.domain.manicurist.model
 
 import com.anastasiia.manicureschedulerbot.domain.event.model.Event
 import com.anastasiia.manicureschedulerbot.domain.manicurist.valueobject.ManicuristId
+import com.anastasiia.manicureschedulerbot.domain.schedule.model.Schedule
 import com.anastasiia.manicureschedulerbot.domain.shared.FullName
 import com.anastasiia.manicureschedulerbot.domain.shared.Url
 

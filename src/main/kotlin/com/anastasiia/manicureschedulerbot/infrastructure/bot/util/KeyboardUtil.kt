@@ -1,7 +1,7 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.bot.util
 
-import com.anastasiia.manicureschedulerbot.application.service.ManicureService
-import com.anastasiia.manicureschedulerbot.application.service.ManicuristService
+import com.anastasiia.manicureschedulerbot.application.manicure.ManicureService
+import com.anastasiia.manicureschedulerbot.application.manicurist.ManicuristService
 import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicurePageCache
 import com.anastasiia.manicureschedulerbot.infrastructure.cache.page.ManicuristPageCache
 import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.CHOOSE_MANICURE_PREFIX
@@ -11,8 +11,8 @@ import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookMa
 import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.NEXT_MANICURIST_PAGE_CALLBACK
 import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURE_PAGE_CALLBACK
 import com.anastasiia.manicureschedulerbot.infrastructure.config.constant.BookManicureConst.PREV_MANICURIST_PAGE_CALLBACK
-import com.anastasiia.manicureschedulerbot.infrastructure.database.entity.ManicureEntity
-import com.anastasiia.manicureschedulerbot.infrastructure.database.entity.ManicuristEntity
+import com.anastasiia.manicureschedulerbot.infrastructure.database.manicure.entity.ManicureEntity
+import com.anastasiia.manicureschedulerbot.infrastructure.database.manicurist.entity.ManicuristEntity
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup

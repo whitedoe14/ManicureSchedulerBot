@@ -1,6 +1,6 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.bot
 
-import com.anastasiia.manicureschedulerbot.application.dispatcher.UpdateDispatcher
+import com.anastasiia.manicureschedulerbot.application.shared.dispatcher.UpdateDispatcher
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.telegram.telegrambots.bots.TelegramLongPollingBot

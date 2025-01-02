@@ -1,8 +1,8 @@
 package com.anastasiia.manicureschedulerbot.infrastructure.controller.view
 
-import com.anastasiia.manicureschedulerbot.application.service.EventService
-import com.anastasiia.manicureschedulerbot.infrastructure.database.repository.ClientRepository
-import com.anastasiia.manicureschedulerbot.infrastructure.database.repository.ManicuristRepository
+import com.anastasiia.manicureschedulerbot.application.event.service.EventService
+import com.anastasiia.manicureschedulerbot.infrastructure.database.client.repository.ClientRepository
+import com.anastasiia.manicureschedulerbot.infrastructure.database.manicurist.repository.ManicuristRepository
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Controller
